@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>417</string>
+	<string>428</string>
 	<key>AMApplicationVersion</key>
-	<string>2.6</string>
+	<string>2.7</string>
 	<key>AMDocumentVersion</key>
 	<string>2</string>
 	<key>actions</key>
@@ -105,7 +105,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.000000:248.000000</string>
+				<string>309.000000:248.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -215,7 +215,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.000000:354.000000</string>
+				<string>309.000000:354.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -317,7 +317,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.000000:600.000000</string>
+				<string>309.000000:600.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -427,7 +427,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.000000:706.000000</string>
+				<string>309.000000:706.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -470,8 +470,6 @@ end run</string>
 				<dict>
 					<key>Container</key>
 					<string>List</string>
-					<key>Optional</key>
-					<true/>
 					<key>Types</key>
 					<array>
 						<string>*</string>
@@ -543,7 +541,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.000000:861.000000</string>
+				<string>309.000000:809.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -586,11 +584,9 @@ end run</string>
 				<dict>
 					<key>Container</key>
 					<string>List</string>
-					<key>Optional</key>
-					<true/>
 					<key>Types</key>
 					<array>
-						<string>com.apple.applescript.object</string>
+						<string>*</string>
 					</array>
 				</dict>
 				<key>AMRequiredResources</key>
@@ -655,7 +651,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.000000:964.000000</string>
+				<string>309.000000:912.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -705,7 +701,8 @@ end run</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	set input_url to first item of input	set input_text to the second item of input		--display alert (input as text)	set the clipboard to "&lt;a href=\"" &amp; input_url &amp; "\" target=\"_blank\"&gt;" &amp; input_text &amp; "&lt;/a&gt;"	set theHEX to do shell script "pbpaste | hexdump -ve '1/1 \"%.2x\"'"	if theHEX is "" then		beep	else		run script "set the clipboard to «data HTML" &amp; theHEX &amp; "»"	end if		set appName to "Vitamin-R 2"		tell application appName		activate	end tell		tell application "System Events"		set this_info to {}		tell process appName			set frontmost to true			set theWindows to windows			set windowsCount to count of theWindows			set mainWindow to window 1						set currentStep to name of static text 1 of mainWindow						if currentStep = "On an Open-Ended Break…" then				click button "Continue" of window 1				--return "OK"			end if						set currentStep to name of static text 1 of mainWindow			if currentStep = "Define the Objective for This Time Slice" then				set objectiveArea to text area 1 of scroll area 1 of window 1				set value of objectiveArea to ""				get the value of objectiveArea				keystroke "v" using {command down}				get the value of objectiveArea				click button "Continue" of window 1				click button "Hide Checked" of window 1				click button "Start" of window 1				--UI elements of window 1			end if		end tell	end tell	return inputend run</string>
+					<string>on run {input, parameters}	set input_url to first item of input	set input_text to the second item of input		--display alert (input as text)	set the clipboard to "&lt;a href=\"" &amp; input_url &amp; "\" target=\"_blank\"&gt;" &amp; input_text &amp; "&lt;/a&gt;"	set theHEX to do shell script "pbpaste | hexdump -ve '1/1 \"%.2x\"'"	if theHEX is "" then		beep	else		run script "set the clipboard to «data HTML" &amp; theHEX &amp; "»"	end if		set appName to "Vitamin-R 2"		tell application appName		activate	end tell		tell application "System Events"		set this_info to {}		tell process appName			set frontmost to true			set theWindows to windows			set windowsCount to count of theWindows			set mainWindow to window 1						set currentStep to name of static text 1 of mainWindow						if currentStep = "On an Open-Ended Break…" then				click button "Continue" of window 1				--return "OK"			end if						set currentStep to name of static text 1 of mainWindow			if currentStep = "Define the Objective for This Time Slice" then				set objectiveArea to text area 1 of scroll area 1 of window 1				set value of objectiveArea to ""				get the value of objectiveArea				keystroke "v" using {command down}				get the value of objectiveArea				click button "Continue" of window 1				click button "Hide Checked" of window 1
+				click button "Continue" of window 1				click button "Start" of window 1				--UI elements of window 1			end if		end tell	end tell	return inputend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -729,8 +726,6 @@ end run</string>
 				</array>
 				<key>OutputUUID</key>
 				<string>7D02F66A-77FB-4D35-B47B-589571C5DCCD</string>
-				<key>StartAction</key>
-				<false/>
 				<key>UUID</key>
 				<string>B1F899B6-A28F-4F3D-8269-441D41FFDEEF</string>
 				<key>UnlocalizedApplications</key>
@@ -761,7 +756,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.000000:1210.000000</string>
+				<string>309.000000:1158.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -811,10 +806,7 @@ end run</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	tell application "System Events"		tell application process "SystemUIServer"			try				key down option				--click menu bar item "Notification Center, Do Not Disturb enabled" of menu bar 2				click menu bar item "Notification Center" of menu bar 2				key up option
-				delay 1500
-				key down option
-				click menu bar item "Notification Center, Do Not Disturb enabled" of menu bar 2				key up option			on error				key up option			end try		end tell	end tellend run</string>
+					<string>on run {input, parameters}	tell application "System Events"		tell application process "SystemUIServer"			try				key down option				--click menu bar item "Notification Center, Do Not Disturb enabled" of menu bar 2				click menu bar item "Notification Center" of menu bar 2				key up option				delay 1500				key down option				click menu bar item "Notification Center, Do Not Disturb enabled" of menu bar 2				key up option			on error				key up option			end try		end tell	end tellend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -865,12 +857,10 @@ end run</string>
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.000000:1456.000000</string>
+				<string>309.000000:1404.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -880,54 +870,54 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>0791BF61-C11D-41BF-8C1B-CE7A96B06FF7</key>
+		<key>0C2FC342-8CA9-4CD3-8485-B5868BA4F012</key>
+		<dict>
+			<key>from</key>
+			<string>B1F899B6-A28F-4F3D-8269-441D41FFDEEF - B1F899B6-A28F-4F3D-8269-441D41FFDEEF</string>
+			<key>to</key>
+			<string>C35CF68B-C10C-49FD-9A80-1DD45F08EB1C - C35CF68B-C10C-49FD-9A80-1DD45F08EB1C</string>
+		</dict>
+		<key>10F4B4AD-3949-4B51-B447-405FBD2872E2</key>
 		<dict>
 			<key>from</key>
 			<string>F390250C-C490-4034-B1D3-A4DA089A3E5C - F390250C-C490-4034-B1D3-A4DA089A3E5C</string>
 			<key>to</key>
 			<string>51DF41C1-CBD7-4E04-A980-19ABC2592060 - 51DF41C1-CBD7-4E04-A980-19ABC2592060</string>
 		</dict>
-		<key>1AC2C115-1BDE-4E11-BF95-DB71DF0DE636</key>
+		<key>3083E0AE-7822-404F-AB6E-FF9B826C9C7C</key>
 		<dict>
 			<key>from</key>
-			<string>A41FBC8C-399E-4EAE-A53D-6343E0B7B48A - A41FBC8C-399E-4EAE-A53D-6343E0B7B48A</string>
-			<key>to</key>
-			<string>B1F899B6-A28F-4F3D-8269-441D41FFDEEF - B1F899B6-A28F-4F3D-8269-441D41FFDEEF</string>
-		</dict>
-		<key>663B0654-4088-4E06-8B9D-62A50AF3AA3B</key>
-		<dict>
-			<key>from</key>
-			<string>D7C5186C-0AEF-4F22-91BD-9E83521B079E - D7C5186C-0AEF-4F22-91BD-9E83521B079E</string>
-			<key>to</key>
 			<string>102D62DA-BC9E-4E58-B221-B71CF7E8BD02 - 102D62DA-BC9E-4E58-B221-B71CF7E8BD02</string>
-		</dict>
-		<key>74B8A8C5-59F4-4815-BA36-D4C06E23265C</key>
-		<dict>
-			<key>from</key>
-			<string>D13AA2D9-74B3-4F16-A971-6A43A9B1426B - D13AA2D9-74B3-4F16-A971-6A43A9B1426B</string>
 			<key>to</key>
-			<string>A41FBC8C-399E-4EAE-A53D-6343E0B7B48A - A41FBC8C-399E-4EAE-A53D-6343E0B7B48A</string>
+			<string>D13AA2D9-74B3-4F16-A971-6A43A9B1426B - D13AA2D9-74B3-4F16-A971-6A43A9B1426B</string>
 		</dict>
-		<key>83E63D34-CD2A-4A83-82D4-1D44177B3BD6</key>
+		<key>442E85D6-1222-480E-B370-8F091D0D8407</key>
 		<dict>
 			<key>from</key>
 			<string>51DF41C1-CBD7-4E04-A980-19ABC2592060 - 51DF41C1-CBD7-4E04-A980-19ABC2592060</string>
 			<key>to</key>
 			<string>D7C5186C-0AEF-4F22-91BD-9E83521B079E - D7C5186C-0AEF-4F22-91BD-9E83521B079E</string>
 		</dict>
-		<key>9F0800F1-5059-437C-90F6-F4F8CEA8D9F0</key>
+		<key>6FC1BE47-8EF5-4F9B-A73B-9C180BAD0F4A</key>
 		<dict>
 			<key>from</key>
+			<string>D7C5186C-0AEF-4F22-91BD-9E83521B079E - D7C5186C-0AEF-4F22-91BD-9E83521B079E</string>
+			<key>to</key>
 			<string>102D62DA-BC9E-4E58-B221-B71CF7E8BD02 - 102D62DA-BC9E-4E58-B221-B71CF7E8BD02</string>
-			<key>to</key>
-			<string>D13AA2D9-74B3-4F16-A971-6A43A9B1426B - D13AA2D9-74B3-4F16-A971-6A43A9B1426B</string>
 		</dict>
-		<key>E617BE5B-7626-4924-9807-D45A7F8BC0FC</key>
+		<key>702D57FA-CCC8-46AE-80E1-B1BC1D5C8C72</key>
 		<dict>
 			<key>from</key>
-			<string>B1F899B6-A28F-4F3D-8269-441D41FFDEEF - B1F899B6-A28F-4F3D-8269-441D41FFDEEF</string>
+			<string>A41FBC8C-399E-4EAE-A53D-6343E0B7B48A - A41FBC8C-399E-4EAE-A53D-6343E0B7B48A</string>
 			<key>to</key>
-			<string>C35CF68B-C10C-49FD-9A80-1DD45F08EB1C - C35CF68B-C10C-49FD-9A80-1DD45F08EB1C</string>
+			<string>B1F899B6-A28F-4F3D-8269-441D41FFDEEF - B1F899B6-A28F-4F3D-8269-441D41FFDEEF</string>
+		</dict>
+		<key>E7129D4B-53BD-4DBE-ACAB-8D741222B00F</key>
+		<dict>
+			<key>from</key>
+			<string>D13AA2D9-74B3-4F16-A971-6A43A9B1426B - D13AA2D9-74B3-4F16-A971-6A43A9B1426B</string>
+			<key>to</key>
+			<string>A41FBC8C-399E-4EAE-A53D-6343E0B7B48A - A41FBC8C-399E-4EAE-A53D-6343E0B7B48A</string>
 		</dict>
 	</dict>
 	<key>variables</key>
