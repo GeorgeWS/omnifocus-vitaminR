@@ -213,14 +213,14 @@ end run</string>
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<true/>
+				<false/>
 				<key>location</key>
-				<string>309.000000:354.000000</string>
+				<string>309.000000:290.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -263,7 +263,7 @@ end run</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	-- At this time the script works only for one single selected task	tell application "OmniFocus"		tell front document			tell document window 1				set theSelectedItems to selected trees of content				if ((count of theSelectedItems) &lt; 1) then					display alert "You must first select a single task." message "Select a single task before running this script." as warning					return				end if				if ((count of theSelectedItems) &gt; 1) then					display alert "This script handles only one task at a single blow!" message "Select a single task before running this script." as warning					return				end if			end tell		end tell	end tell				tell application "OmniFocus"		set theDoc to document window 1 of document 1				set theSelectedTask to the value of the first item of the selected tree of the content of theDoc		set theNewTaskId to the id of theSelectedTask				set theNewTaskUrl to "omnifocus:///task/" &amp; (theNewTaskId as text)		theNewTaskUrl	end tellend run</string>
+					<string>on run {input, parameters}	-- At this time the script works only for one single selected task	tell application "OmniFocus"		tell front document			tell document window 1				set theSelectedItems to selected trees of content				if ((count of theSelectedItems) &lt; 1) then					display alert "You must first select a single task." message "Select a single task before running this script." as warning					return				end if				if ((count of theSelectedItems) &gt; 1) then					display alert "This script handles only one task at a single blow!" message "Select a single task before running this script." as warning					return				end if			end tell		end tell	end tell				tell application "OmniFocus"		set theDoc to document window 1 of document 1				set theSelectedTask to the value of the first item of the selected tree of the content of theDoc				set theNewTaskId to the id of theSelectedTask		set theNewTaskUrl to "omnifocus:///task/" &amp; (theNewTaskId as text)		theNewTaskUrl	end tellend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -317,7 +317,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>309.000000:600.000000</string>
+				<string>309.000000:536.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -425,9 +425,219 @@ end run</string>
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
+				<false/>
+				<key>location</key>
+				<string>309.000000:578.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}		-- At this time the script works only for one single selected task	tell application "OmniFocus"		tell front document			tell document window 1				set theSelectedItems to selected trees of content				if ((count of theSelectedItems) &lt; 1) then					display alert "You must first select a single task." message "Select a single task before running this script." as warning					return				end if				if ((count of theSelectedItems) &gt; 1) then					display alert "This script handles only one task at a single blow!" message "Select a single task before running this script." as warning					return				end if			end tell		end tell	end tell		tell application "OmniFocus"		set theDoc to document window 1 of document 1				set theSelectedTask to the value of the first item of the selected tree of the content of theDoc		set theTaskDuration to the estimated minutes of theSelectedTask				theTaskDuration	end tellend run</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>61D8BA17-EBF3-4940-BBC3-115B2DDA7C07</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>718646C8-7CF9-406D-A9E0-DF23BB9CE320</string>
+				<key>UUID</key>
+				<string>C7AF582C-1FCE-4711-994C-2B32799B75CC</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>309.000000:706.000000</string>
+				<string>309.000000:824.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>*</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>v.1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>variableUUID</key>
+					<dict>
+						<key>isPathPopUp</key>
+						<false/>
+						<key>selectedVariableUUID</key>
+						<string>F2C311BA-902D-4C18-9458-5C89C377E487</string>
+					</dict>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>*</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Set Value of Variable.action</string>
+				<key>ActionName</key>
+				<string>Set Value of Variable</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>variableUUID</key>
+					<string>F2C311BA-902D-4C18-9458-5C89C377E487</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.Set_Value_of_Variable</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>Set_Value_of_Variable</string>
+				<key>InputUUID</key>
+				<string>4E931985-B01D-4241-B080-4437ECB0648F</string>
+				<key>Keywords</key>
+				<array>
+					<string>variable</string>
+					<string>binding</string>
+					<string>input</string>
+					<string>output</string>
+					<string>storage</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>D6E6461F-45E7-466B-9915-EDE75B537202</string>
+				<key>UUID</key>
+				<string>9DBD2A84-32DF-4864-93B1-4DF810D4BE9C</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>variableUUID</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.000000:930.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -539,14 +749,14 @@ end run</string>
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<true/>
+				<false/>
 				<key>location</key>
-				<string>309.000000:809.000000</string>
+				<string>309.000000:972.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -649,14 +859,122 @@ end run</string>
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<true/>
+				<false/>
 				<key>location</key>
-				<string>309.000000:912.000000</string>
+				<string>309.000000:1014.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<true/>
+			<false/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>*</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>v.1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>variableUUID</key>
+					<dict>
+						<key>isPathPopUp</key>
+						<false/>
+						<key>selectedVariableUUID</key>
+						<string>F2C311BA-902D-4C18-9458-5C89C377E487</string>
+					</dict>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>*</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Get Value of Variable.action</string>
+				<key>ActionName</key>
+				<string>Get Value of Variable</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>variableUUID</key>
+					<string>F2C311BA-902D-4C18-9458-5C89C377E487</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.Get_Value_of_Variable</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>Get_Value_of_Variable</string>
+				<key>InputUUID</key>
+				<string>74C963E2-2843-44E7-9803-5CB08FB29AAD</string>
+				<key>Keywords</key>
+				<array>
+					<string>variable</string>
+					<string>binding</string>
+					<string>input</string>
+					<string>output</string>
+					<string>storage</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>BD71B5B0-B6C9-44D8-9474-D4B54E0DCE1F</string>
+				<key>UUID</key>
+				<string>66C4D00F-15E0-4159-B276-4F575308ADC1</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>variableUUID</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<false/>
+				<key>location</key>
+				<string>309.000000:1056.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<false/>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -701,8 +1019,8 @@ end run</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	set input_url to first item of input	set input_text to the second item of input		--display alert (input as text)	set the clipboard to "&lt;a href=\"" &amp; input_url &amp; "\" target=\"_blank\"&gt;" &amp; input_text &amp; "&lt;/a&gt;"	set theHEX to do shell script "pbpaste | hexdump -ve '1/1 \"%.2x\"'"	if theHEX is "" then		beep	else		run script "set the clipboard to «data HTML" &amp; theHEX &amp; "»"	end if		set appName to "Vitamin-R 2"		tell application appName		activate	end tell		tell application "System Events"		set this_info to {}		tell process appName			set frontmost to true			set theWindows to windows			set windowsCount to count of theWindows			set mainWindow to window 1						set currentStep to name of static text 1 of mainWindow						if currentStep = "On an Open-Ended Break…" then				click button "Continue" of window 1				--return "OK"			end if						set currentStep to name of static text 1 of mainWindow			if currentStep = "Define the Objective for This Time Slice" then				set objectiveArea to text area 1 of scroll area 1 of window 1				set value of objectiveArea to ""				get the value of objectiveArea				keystroke "v" using {command down}				get the value of objectiveArea				click button "Continue" of window 1				click button "Hide Checked" of window 1
-				click button "Continue" of window 1				click button "Start" of window 1				--UI elements of window 1			end if		end tell	end tell	return inputend run</string>
+					<string>on run {input, parameters}	set input_url to first item of input	set input_text to the second item of input	set task_duration to the third item of input	if task_duration is missing value or task_duration &gt; 60 then set task_duration to 25		--display alert (input as text)	set the clipboard to "&lt;a href=\"" &amp; input_url &amp; "\" target=\"_blank\"&gt;" &amp; input_text &amp; "&lt;/a&gt;"	set theHEX to do shell script "pbpaste | hexdump -ve '1/1 \"%.2x\"'"	if theHEX is "" then		beep	else		run script "set the clipboard to «data HTML" &amp; theHEX &amp; "»"	end if		set appName to "Vitamin-R 2"		tell application appName		activate	end tell		tell application "System Events"		set this_info to {}		tell process appName			set frontmost to true			set theWindows to windows			set windowsCount to count of theWindows			set mainWindow to window 1						set currentStep to name of static text 1 of mainWindow						if currentStep = "On an Open-Ended Break…" then				click button "Continue" of window 1				--return "OK"			end if						set currentStep to name of static text 1 of mainWindow			if currentStep = "Define the Objective for This Time Slice" then				set objectiveArea to text area 1 of scroll area 1 of window 1				set value of objectiveArea to ""				get the value of objectiveArea				keystroke "v" using {command down}				get the value of objectiveArea				click button "Continue" of window 1
+				click button "Hide Checked" of window 1				click button "Continue" of window 1				set the value of slider 1 of window 1 to task_duration				click button "Start" of window 1				--UI elements of window 1			end if		end tell	end tell	return inputend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -756,7 +1074,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>309.000000:1158.000000</string>
+				<string>309.000000:1302.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -860,7 +1178,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>309.000000:1404.000000</string>
+				<string>309.000000:1548.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -870,54 +1188,75 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>0C2FC342-8CA9-4CD3-8485-B5868BA4F012</key>
+		<key>14923B17-1934-40CF-A60A-7D77EC6559DD</key>
 		<dict>
 			<key>from</key>
 			<string>B1F899B6-A28F-4F3D-8269-441D41FFDEEF - B1F899B6-A28F-4F3D-8269-441D41FFDEEF</string>
 			<key>to</key>
 			<string>C35CF68B-C10C-49FD-9A80-1DD45F08EB1C - C35CF68B-C10C-49FD-9A80-1DD45F08EB1C</string>
 		</dict>
-		<key>10F4B4AD-3949-4B51-B447-405FBD2872E2</key>
+		<key>32CB26A0-CEB3-4EA6-A963-B37A2247FEE3</key>
+		<dict>
+			<key>from</key>
+			<string>66C4D00F-15E0-4159-B276-4F575308ADC1 - 66C4D00F-15E0-4159-B276-4F575308ADC1</string>
+			<key>to</key>
+			<string>B1F899B6-A28F-4F3D-8269-441D41FFDEEF - B1F899B6-A28F-4F3D-8269-441D41FFDEEF</string>
+		</dict>
+		<key>44C9BD95-7FAF-487D-81AD-4243A914326B</key>
+		<dict>
+			<key>from</key>
+			<string>C7AF582C-1FCE-4711-994C-2B32799B75CC - C7AF582C-1FCE-4711-994C-2B32799B75CC</string>
+			<key>to</key>
+			<string>9DBD2A84-32DF-4864-93B1-4DF810D4BE9C - 9DBD2A84-32DF-4864-93B1-4DF810D4BE9C</string>
+		</dict>
+		<key>4F88C2EB-979B-4E7A-9532-CDF8B2761EA6</key>
+		<dict>
+			<key>from</key>
+			<string>102D62DA-BC9E-4E58-B221-B71CF7E8BD02 - 102D62DA-BC9E-4E58-B221-B71CF7E8BD02</string>
+			<key>to</key>
+			<string>C7AF582C-1FCE-4711-994C-2B32799B75CC - C7AF582C-1FCE-4711-994C-2B32799B75CC</string>
+		</dict>
+		<key>53EEDB5A-DD93-4724-8AF3-B7C4BFE62153</key>
+		<dict>
+			<key>from</key>
+			<string>A41FBC8C-399E-4EAE-A53D-6343E0B7B48A - A41FBC8C-399E-4EAE-A53D-6343E0B7B48A</string>
+			<key>to</key>
+			<string>66C4D00F-15E0-4159-B276-4F575308ADC1 - 66C4D00F-15E0-4159-B276-4F575308ADC1</string>
+		</dict>
+		<key>5CF76892-3A97-4A63-B9E6-F1ED89010634</key>
 		<dict>
 			<key>from</key>
 			<string>F390250C-C490-4034-B1D3-A4DA089A3E5C - F390250C-C490-4034-B1D3-A4DA089A3E5C</string>
 			<key>to</key>
 			<string>51DF41C1-CBD7-4E04-A980-19ABC2592060 - 51DF41C1-CBD7-4E04-A980-19ABC2592060</string>
 		</dict>
-		<key>3083E0AE-7822-404F-AB6E-FF9B826C9C7C</key>
+		<key>5E325292-5470-46E3-BCB5-EC3A73B212A4</key>
 		<dict>
 			<key>from</key>
-			<string>102D62DA-BC9E-4E58-B221-B71CF7E8BD02 - 102D62DA-BC9E-4E58-B221-B71CF7E8BD02</string>
+			<string>D7C5186C-0AEF-4F22-91BD-9E83521B079E - D7C5186C-0AEF-4F22-91BD-9E83521B079E</string>
 			<key>to</key>
-			<string>D13AA2D9-74B3-4F16-A971-6A43A9B1426B - D13AA2D9-74B3-4F16-A971-6A43A9B1426B</string>
+			<string>102D62DA-BC9E-4E58-B221-B71CF7E8BD02 - 102D62DA-BC9E-4E58-B221-B71CF7E8BD02</string>
 		</dict>
-		<key>442E85D6-1222-480E-B370-8F091D0D8407</key>
+		<key>994FFE7C-BCBB-43D2-AA62-BD9A8529E342</key>
+		<dict>
+			<key>from</key>
+			<string>D13AA2D9-74B3-4F16-A971-6A43A9B1426B - D13AA2D9-74B3-4F16-A971-6A43A9B1426B</string>
+			<key>to</key>
+			<string>A41FBC8C-399E-4EAE-A53D-6343E0B7B48A - A41FBC8C-399E-4EAE-A53D-6343E0B7B48A</string>
+		</dict>
+		<key>AB338342-17EB-4E3F-AD68-C546930AA102</key>
 		<dict>
 			<key>from</key>
 			<string>51DF41C1-CBD7-4E04-A980-19ABC2592060 - 51DF41C1-CBD7-4E04-A980-19ABC2592060</string>
 			<key>to</key>
 			<string>D7C5186C-0AEF-4F22-91BD-9E83521B079E - D7C5186C-0AEF-4F22-91BD-9E83521B079E</string>
 		</dict>
-		<key>6FC1BE47-8EF5-4F9B-A73B-9C180BAD0F4A</key>
+		<key>AE8BDC11-66CD-4F9F-BF0B-635B89BDCC39</key>
 		<dict>
 			<key>from</key>
-			<string>D7C5186C-0AEF-4F22-91BD-9E83521B079E - D7C5186C-0AEF-4F22-91BD-9E83521B079E</string>
+			<string>9DBD2A84-32DF-4864-93B1-4DF810D4BE9C - 9DBD2A84-32DF-4864-93B1-4DF810D4BE9C</string>
 			<key>to</key>
-			<string>102D62DA-BC9E-4E58-B221-B71CF7E8BD02 - 102D62DA-BC9E-4E58-B221-B71CF7E8BD02</string>
-		</dict>
-		<key>702D57FA-CCC8-46AE-80E1-B1BC1D5C8C72</key>
-		<dict>
-			<key>from</key>
-			<string>A41FBC8C-399E-4EAE-A53D-6343E0B7B48A - A41FBC8C-399E-4EAE-A53D-6343E0B7B48A</string>
-			<key>to</key>
-			<string>B1F899B6-A28F-4F3D-8269-441D41FFDEEF - B1F899B6-A28F-4F3D-8269-441D41FFDEEF</string>
-		</dict>
-		<key>E7129D4B-53BD-4DBE-ACAB-8D741222B00F</key>
-		<dict>
-			<key>from</key>
 			<string>D13AA2D9-74B3-4F16-A971-6A43A9B1426B - D13AA2D9-74B3-4F16-A971-6A43A9B1426B</string>
-			<key>to</key>
-			<string>A41FBC8C-399E-4EAE-A53D-6343E0B7B48A - A41FBC8C-399E-4EAE-A53D-6343E0B7B48A</string>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -937,6 +1276,14 @@ end run</string>
 			<string>com.apple.Automator.Variable.Storage</string>
 			<key>name</key>
 			<string>AnchorText</string>
+		</dict>
+		<dict>
+			<key>UUID</key>
+			<string>F2C311BA-902D-4C18-9458-5C89C377E487</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Storage</string>
+			<key>name</key>
+			<string>TaskDuration</string>
 		</dict>
 	</array>
 	<key>workflowMetaData</key>
